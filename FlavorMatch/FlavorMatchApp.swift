@@ -2,7 +2,7 @@
 //  FlavorMatchApp.swift
 //  FlavorMatch
 //
-//  Created by Svetlana Shardakova on 20/02/24.
+//  Created by PotatoDolphins on 20/02/24.
 //
 
 import SwiftUI

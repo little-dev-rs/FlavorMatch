@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  FlavorMatch
 //
-//  Created by Svetlana Shardakova on 20/02/24.
+//  Created by PotatoDolphins on 20/02/24.
 //
 
 import SwiftUI
@@ -10,12 +10,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Image("doodle")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .position(.init(x: UIScreen.main.bounds.width / 2, y:  UIScreen.main.bounds.height / 2))
+                .edgesIgnoringSafeArea(.all)
         }
-        .padding()
     }
 }
 
