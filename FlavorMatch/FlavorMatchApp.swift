@@ -11,7 +11,7 @@ import SwiftUI
 struct FlavorMatchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StartView()
         }
     }
 }
