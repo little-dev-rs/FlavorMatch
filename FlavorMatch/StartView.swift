@@ -11,11 +11,10 @@ struct StartView: View {
     
     private enum Constants {
         static let imageName: String = "hands"
-        static let buttonTitle: String = "MATCH \nYOUR\n FLAVOUR"
+        static let buttonTitle: String = "Match your flavour"
     }
 
     var body: some View {
-
         NavigationView {
             VStack {
                 ZStack {
@@ -25,7 +24,17 @@ struct StartView: View {
                     Image(Constants.imageName)
                         .aspectRatio(contentMode: .fill)
                     
-                    NavigationLink(destination: CardsContentView()) {
+                    NavigationLink(destination: NavigationSelectionView(
+                        ingridientList: IngridientsList(
+                            isVegan: false,
+                            base: "",
+                            complement: "",
+                            likedIngridients: [],
+                            dislikedIngridients: []
+                        ),
+                        navigationIndex: 0
+                    ))
+                    {
                         ZStack {
                             Circle()
                                 .foregroundColor(Color.clear)
@@ -35,14 +44,13 @@ struct StartView: View {
                                 .foregroundColor(Color.CustomColors.orange)
                                 .padding(.top, -40)
                         }
-                        .frame(width: 300, height: 300)
+                        .frame(width: 250, height: 300)
                         .padding()
                     }
                 }
             }
         }
     }
-    
 }
 
 struct StartView_Previews: PreviewProvider {

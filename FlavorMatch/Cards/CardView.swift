@@ -58,7 +58,7 @@ struct CardView: View {
                     offset = (isDragging ? translation : .zero)
                 })
                 .onEnded({ value in
-                    let width = getRect().width - 50
+                    let width: CGFloat = 500//getRect().width - 50
                     let translation = value.translation.width
                     
                     let checkingStatus = (translation > 0 ? translation : -translation )
