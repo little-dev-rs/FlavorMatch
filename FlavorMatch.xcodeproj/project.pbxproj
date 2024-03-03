@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57E0909F2B921A080002EBA2 /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E0909E2B921A080002EBA2 /* NavigationView.swift */; };
+		57E090A12B926E600002EBA2 /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E090A02B926E600002EBA2 /* CardPickerView.swift */; };
+		57E090A32B927D7D0002EBA2 /* DishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E090A22B927D7D0002EBA2 /* DishView.swift */; };
+		7722B51C2B94D6EE00EEBF5C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B51B2B94D6EE00EEBF5C /* RoundedButton.swift */; };
+		7722B51E2B94D74500EEBF5C /* IngridientsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B51D2B94D74500EEBF5C /* IngridientsList.swift */; };
+		7722B5202B94D77600EEBF5C /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B51F2B94D77600EEBF5C /* Dish.swift */; };
 		772A20C22B84B7C900CB15F6 /* FlavorMatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A20C12B84B7C900CB15F6 /* FlavorMatchApp.swift */; };
 		772A20C42B84B7C900CB15F6 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A20C32B84B7C900CB15F6 /* StartView.swift */; };
 		772A20C62B84B7CC00CB15F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772A20C52B84B7CC00CB15F6 /* Assets.xcassets */; };
@@ -19,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		57E0909E2B921A080002EBA2 /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		57E090A02B926E600002EBA2 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
+		57E090A22B927D7D0002EBA2 /* DishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishView.swift; sourceTree = "<group>"; };
+		7722B51B2B94D6EE00EEBF5C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		7722B51D2B94D74500EEBF5C /* IngridientsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsList.swift; sourceTree = "<group>"; };
+		7722B51F2B94D77600EEBF5C /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		772A20BE2B84B7C900CB15F6 /* FlavorMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlavorMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772A20C12B84B7C900CB15F6 /* FlavorMatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorMatchApp.swift; sourceTree = "<group>"; };
 		772A20C32B84B7C900CB15F6 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -64,6 +76,9 @@
 			children = (
 				772A20C12B84B7C900CB15F6 /* FlavorMatchApp.swift */,
 				772A20C32B84B7C900CB15F6 /* StartView.swift */,
+				57E0909E2B921A080002EBA2 /* NavigationView.swift */,
+				7722B51B2B94D6EE00EEBF5C /* RoundedButton.swift */,
+				57E090A22B927D7D0002EBA2 /* DishView.swift */,
 				77A85C862B8D3CFB006C0F4E /* Cards */,
 				7771ED112B8D1CE200769ED7 /* Models */,
 				7771ED102B8D1CD100769ED7 /* Extensions */,
@@ -94,6 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				7771ED0C2B8CE94D00769ED7 /* Ingridient.swift */,
+				7722B51F2B94D77600EEBF5C /* Dish.swift */,
+				7722B51D2B94D74500EEBF5C /* IngridientsList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +118,7 @@
 		77A85C862B8D3CFB006C0F4E /* Cards */ = {
 			isa = PBXGroup;
 			children = (
+				57E090A02B926E600002EBA2 /* CardPickerView.swift */,
 				7771ED082B8CD9FD00769ED7 /* CardsContentView.swift */,
 				7771ED0A2B8CE8DF00769ED7 /* CardsViewModel.swift */,
 				7771ED042B8BFBFB00769ED7 /* CardView.swift */,
@@ -180,10 +198,16 @@
 			files = (
 				772A20C42B84B7C900CB15F6 /* StartView.swift in Sources */,
 				7771ED092B8CD9FE00769ED7 /* CardsContentView.swift in Sources */,
+				57E0909F2B921A080002EBA2 /* NavigationView.swift in Sources */,
 				7771ED0F2B8CE97C00769ED7 /* View+rect.swift in Sources */,
+				7722B51E2B94D74500EEBF5C /* IngridientsList.swift in Sources */,
+				57E090A12B926E600002EBA2 /* CardPickerView.swift in Sources */,
 				7771ED0B2B8CE8DF00769ED7 /* CardsViewModel.swift in Sources */,
+				7722B51C2B94D6EE00EEBF5C /* RoundedButton.swift in Sources */,
+				57E090A32B927D7D0002EBA2 /* DishView.swift in Sources */,
 				7771ED052B8BFBFB00769ED7 /* CardView.swift in Sources */,
 				7771ED0D2B8CE94D00769ED7 /* Ingridient.swift in Sources */,
+				7722B5202B94D77600EEBF5C /* Dish.swift in Sources */,
 				772A20C22B84B7C900CB15F6 /* FlavorMatchApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

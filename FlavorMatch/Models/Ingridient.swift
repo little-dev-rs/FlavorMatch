@@ -2,7 +2,7 @@
 //  Ingridient.swift
 //  FlavorMatch
 //
-//  Created by Svetlana Shardakova on 26/02/24.
+//  Created by PotatoDolphins on 26/02/24.
 //
 
 import Foundation
