@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ingridient: Identifiable {
+struct IngridientModel: Identifiable {
     let id: UUID = UUID()
     let name: String
     let description: String

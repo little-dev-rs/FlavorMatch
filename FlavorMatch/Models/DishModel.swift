@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dish {
+struct DishModel {
     var name: String
     var base: String
     var complement: String

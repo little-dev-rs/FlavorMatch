@@ -9,8 +9,8 @@ import SwiftUI
 
 class CardsViewModel: ObservableObject {
     
-    @Published var ingridients: [Ingridient]
-    @Published var displayedIngridients: [Ingridient]?
+    @Published var ingridients: [IngridientModel]
+    @Published var displayedIngridients: [IngridientModel]?
     
     public init() {
         self.ingridients = [
@@ -21,16 +21,16 @@ class CardsViewModel: ObservableObject {
             Ingridient(name: "cheese", description: "cheese", imageName: "cheese"),
             Ingridient(name: "brinjal", description: "brinjal", imageName: "brinjal"),
             Ingridient(name: "rice", description: "rice", imageName: "rice"),*/
-            Ingridient(name: "carrot", description: "carrot", imageName: "carrot"),
-            Ingridient(name: "onions", description: "onions", imageName: "onions"),
-            Ingridient(name: "tomato", description: "tomato", imageName: "tomato"),
-            Ingridient(name: "garlic", description: "garlic", imageName: "garlic"),
-            Ingridient(name: "pepers", description: "pepers", imageName: "pepers"),
+            IngridientModel(name: "carrot", description: "carrot", imageName: "carrot"),
+            IngridientModel(name: "onions", description: "onions", imageName: "onions"),
+            IngridientModel(name: "tomato", description: "tomato", imageName: "tomato"),
+            IngridientModel(name: "garlic", description: "garlic", imageName: "garlic"),
+            IngridientModel(name: "pepers", description: "pepers", imageName: "pepers"),
         ]
         self.displayedIngridients = ingridients
     }
     
-    public func getIndex(ingridient: Ingridient) -> Int {
+    public func getIndex(ingridient: IngridientModel) -> Int {
         let index = displayedIngridients?.firstIndex(where: { currentIngridient in
             return ingridient.id == currentIngridient.id
         }) ?? 0

@@ -7,7 +7,132 @@
 
 import SwiftUI
 
+class AppViewModel {
+
+    var isVeg: Bool?
+    var mainDish: MainDish?
+    var addings: Addings?
+//    let targetIngredients: [Ingridient] = [.onion, .tomato, .chili]
+    var targetIngredients: [Ingridient]? {
+        didSet {
+            _ = setFinalDish()
+        }
+    }
+
+    var finalDish: Dishes?
+
+
+
+}
+
+extension AppViewModel {
+    
+    func setFinalDish() -> Dishes? {
+        guard let isVeg = isVeg else {
+            return nil
+        }
+        if isVeg {
+            return getVegOptions()
+        } else {
+            return getNonvegOptions()
+        }
+    }
+    
+    //TODO: handle all cases
+    func getVegOptions() -> Dishes? {
+        return .riceNoodles
+    }
+
+    func getNonvegOptions() -> Dishes? {
+        guard let mainDish = mainDish, let addings = addings else { return nil}
+    
+        switch mainDish {
+        case .rice:
+            switch addings {
+            case .veg(_):
+                return nil
+            case .nonVeg(let nonVegOption):
+                switch nonVegOption {
+                    // rice fish
+                case .fish:
+                    let preset: [Dishes] = [.bacalhauBras, .paella, .ricePapperRolls]
+                    return matchDish(preset: preset)
+                    
+                    // rice meat
+                case .meat:
+                    let preset: [Dishes] = [.byriani, .paella, .arroz]
+                    return matchDish(preset: preset)
+                    
+                    // rice other
+                case .other:
+                    let preset: [Dishes] = [.risotto, .ricePapperRolls]
+                    return matchDish(preset: preset)
+                }
+            }
+            
+        case .potato:
+            switch addings {
+            case .veg(let veg):
+                return nil
+            case .nonVeg(let nonVeg):
+                switch nonVeg {
+                    // potato fish
+                case .fish:
+                    let preset: [Dishes] = [.pasteisDeBacalhau, .fishNChips]
+                    return matchDish(preset: preset)
+                    
+                    // potato meat
+                case .meat:
+                    let preset: [Dishes] = [.moussaka, .shepardsPie, .burek]
+                    return matchDish(preset: preset)
+                    
+                    // potato other
+                case .other:
+                    let preset: [Dishes] = [.potatoSalad, .patatasBravas, .gnocchi]
+                    return matchDish(preset: preset)
+                }
+            }
+        case .other:
+            switch addings {
+            case .veg(let veg):
+                return nil
+            case .nonVeg(let nonVeg):
+                switch nonVeg {
+                    // other fish
+                case .fish:
+                    return .fishNChips
+                    
+                    // other meat
+                case .meat:
+                    let preset: [Dishes] = [.empandas, .gyoza, .croqueMonsier]
+                    return matchDish(preset: preset)
+                    
+                    // other other
+                case .other:
+                    let preset: [Dishes] = [.capreseSalad, .greekSalad, .padThai]
+                    return matchDish(preset: preset)
+                }
+            }
+        }
+    }
+
+    func matchDish(preset: [Dishes]) -> Dishes? {
+        let matchingDishes = preset.filter { dish in
+            guard let ingridients = dish.ingridientsToMatch, let choosenIngridients = targetIngredients else {
+                return false
+            }
+            return Set(ingridients) == Set(choosenIngridients)
+        }
+        return matchingDishes.first
+    }
+
+}
+
+
+
+
 struct NavigationSelectionView: View {
+
     @State var ingridientList: IngridientsList
     @State var navigationIndex: Int
     
@@ -35,7 +160,8 @@ struct NavigationSelectionView: View {
                         }
                         .padding(.bottom,50)
                         
-                        NavigationLink(destination: NavigationSelectionView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: "potato", complement: ingridientList.complement, likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients), navigationIndex: 2)){
+                        NavigationLink(destination:
+                                        NavigationSelectionView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: "potato", complement: ingridientList.complement, likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients), navigationIndex: 2)) {
                             RoundedButton(text: "potato", color: Color.CustomColors.lightYellow)
                         }
                         .padding(.bottom,50)

@@ -24,8 +24,8 @@ struct StartView: View {
                     Image(Constants.imageName)
                         .aspectRatio(contentMode: .fill)
                     
-                    NavigationLink(destination: NavigationSelectionView(
-                        ingridientList: IngridientsList(
+                    NavigationLink(destination: NavigationSelectionView (
+                        ingridientList: IngridientsList (
                             isVegan: false,
                             base: "",
                             complement: "",

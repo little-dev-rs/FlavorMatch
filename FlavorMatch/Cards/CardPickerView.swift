@@ -7,54 +7,54 @@
 
 import SwiftUI
 
-let DishesMockUp: [Dish] = [
-    Dish(name: "BYRIANI - INDIA",  base: "rice", complement: "meat",
+let DishesMockUp: [DishModel] = [
+    DishModel(name: "BYRIANI - INDIA",  base: "rice", complement: "meat",
          ingridients: ["onions","tomato","garlic","pepers"]),
-    Dish(name: "PAELLA",  base: "rice", complement: "meat",
+    DishModel(name: "PAELLA",  base: "rice", complement: "meat",
          ingridients: ["carrot","onions","tomato",]),
-    Dish(name: "Arroz con pollo",  base: "rice", complement: "meat",
+    DishModel(name: "Arroz con pollo",  base: "rice", complement: "meat",
          ingridients: ["carrot","onions","pepers"]),
-    Dish(name: "Bacalhau à Brás",  base: "rice", complement: "fish",
+    DishModel(name: "Bacalhau à Brás",  base: "rice", complement: "fish",
          ingridients: ["onions","garlic"]),
-    Dish(name: "Paella",  base: "rice", complement: "fish",
+    DishModel(name: "Paella",  base: "rice", complement: "fish",
          ingridients: ["carrot","onions","tomato","garlic"]),
-    Dish(name: "Rice rolls vietnam",  base: "rice", complement: "fish",
+    DishModel(name: "Rice rolls vietnam",  base: "rice", complement: "fish",
          ingridients: ["carrot","onions",]),
-    Dish(name: "Mashrrrisotto",  base: "rice", complement: "other",
+    DishModel(name: "Mashrrrisotto",  base: "rice", complement: "other",
          ingridients: ["tomato","garlic"]),
-    Dish(name: "Rice paper rolls",  base: "rice", complement: "other",
+    DishModel(name: "Rice paper rolls",  base: "rice", complement: "other",
          ingridients: ["carrot","onions","pepers"]),
-    Dish(name: "Pastéis de bacalhau",  base: "potato", complement: "fish",
+    DishModel(name: "Pastéis de bacalhau",  base: "potato", complement: "fish",
          ingridients: ["onions","garlic"]),
-    Dish(name: "FISH N CHIPS",  base: "potato", complement: "fish",
+    DishModel(name: "FISH N CHIPS",  base: "potato", complement: "fish",
          ingridients: ["carrot","pepers"]),
-    Dish(name: "Moussaka - Greece",  base: "potato", complement: "meat",
+    DishModel(name: "Moussaka - Greece",  base: "potato", complement: "meat",
          ingridients: ["onions","tomato","garlic"]),
-    Dish(name: "Shepards pie",  base: "potato", complement: "meat",
+    DishModel(name: "Shepards pie",  base: "potato", complement: "meat",
          ingridients: ["carrot","onions","tomato","garlic","pepers"]),
-    Dish(name: "Patatas bravas",  base: "potato", complement: "other",
+    DishModel(name: "Patatas bravas",  base: "potato", complement: "other",
          ingridients: ["onions","tomato","garlic","pepers"]),
-    Dish(name: "Potato salad",  base: "potato", complement: "other",
+    DishModel(name: "Potato salad",  base: "potato", complement: "other",
          ingridients: ["onions","garlic"]),
-    Dish(name: "Gnocchi itali",  base: "potato", complement: "other",
+    DishModel(name: "Gnocchi itali",  base: "potato", complement: "other",
          ingridients: ["onions","tomato","garlic"]),
-    Dish(name: "Falafel", base: "other", complement: "other",
+    DishModel(name: "Falafel", base: "other", complement: "other",
          ingridients: ["onions","garlic","pepers"]),
-    Dish(name: "VEB Burrito mexico", base: "other", complement: "other",
+    DishModel(name: "VEB Burrito mexico", base: "other", complement: "other",
          ingridients: ["carrot","onions","tomato",]),
-    Dish(name: "Guacamole", base: "other", complement: "other",
+    DishModel(name: "Guacamole", base: "other", complement: "other",
          ingridients: ["onions","tomato","garlic"]),
-    Dish(name: "Rice paper rolls vietnam", base: "rice", complement: "vegan",
+    DishModel(name: "Rice paper rolls vietnam", base: "rice", complement: "vegan",
          ingridients: ["carrot","onions",]),
-    Dish(name: "Vegan Rice Noodle Salad - Thailand", base: "rice", complement: "vegan",
+    DishModel(name: "Vegan Rice Noodle Salad - Thailand", base: "rice", complement: "vegan",
          ingridients: ["carrot","onions",]),
-    Dish(name: "Caprese salad", base: "other", complement: "other",
+    DishModel(name: "Caprese salad", base: "other", complement: "other",
          ingridients: ["tomato",]),
-    Dish(name: "Empandas", base: "other", complement: "meat",
+    DishModel(name: "Empandas", base: "other", complement: "meat",
          ingridients: ["tomato","garlic","pepers"]),
-    Dish(name: "Gyoza", base: "other", complement: "meat",
+    DishModel(name: "Gyoza", base: "other", complement: "meat",
          ingridients: ["onions","garlic"]),
-    Dish(name: "Polipetti Luciana", base: "other", complement: "fish",
+    DishModel(name: "Polipetti Luciana", base: "other", complement: "fish",
          ingridients: ["onions","tomato","garlic","pepers"])
 ]
 
@@ -113,7 +113,7 @@ struct CardPickerView: View {
 }
 
 struct cardLikeDislike: View {
-    var currentIngridient: Ingridient
+    var currentIngridient: IngridientModel
     @State var display: Bool = true
     @Binding var ingridientList: IngridientsList
     @Binding var ingridientNumber: Int

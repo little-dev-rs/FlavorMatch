@@ -10,7 +10,7 @@ import SwiftUI
 struct CardView: View {
 
     @EnvironmentObject var viewModel: CardsViewModel
-    var currentIngridient: Ingridient
+    var currentIngridient: IngridientModel
     
     // gestures
     @State var offset: CGFloat = 0
