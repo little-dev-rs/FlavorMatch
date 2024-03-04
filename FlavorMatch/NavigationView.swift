@@ -8,77 +8,57 @@
 import SwiftUI
 
 struct NavigationSelectionView: View {
-    @State var ingridientList: IngridientsList
+
     @State var navigationIndex: Int
+    
+    @State var viewModel: AppViewModel
     
     var body: some View {
         ZStack {
             Color.CustomColors.orange
                 .ignoresSafeArea()
+            
             VStack {
                 if navigationIndex == 0 {
                     VStack {
-                        NavigationLink(destination: NavigationSelectionView(ingridientList: FlavorMatch.IngridientsList(isVegan: true, base: ingridientList.base, complement: ingridientList.complement, likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients), navigationIndex: 1)){
-                            RoundedButton(text: "veg", color: Color.CustomColors.green)
-                        }
-                        .padding(.bottom,50)
-                        
-                        NavigationLink(destination: NavigationSelectionView(ingridientList: FlavorMatch.IngridientsList(isVegan: false, base: ingridientList.base, complement: ingridientList.complement, likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients), navigationIndex: 1)){
-                            RoundedButton(text: "non veg", color: Color.CustomColors.green)
+                        ForEach(IsVeg.allCases, id: \.self) { option in
+                            NavigationLink(destination: NavigationSelectionView(navigationIndex: 1, viewModel: viewModel)) {
+                                RoundedButton(text: option.name, textColor: Color.CustomColors.orange, backgroundColor: Color.CustomColors.green)
+                            }
+                            .padding(.bottom, 50)
+                            .simultaneousGesture(TapGesture().onEnded {
+                                viewModel = viewModel.update(isVeg: option)
+                            })
                         }
                     }
                 }
                 else if (navigationIndex == 1) {
                     VStack {
-                        NavigationLink(destination: NavigationSelectionView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: "rice", complement: ingridientList.complement, likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients), navigationIndex: 2)){
-                            RoundedButton(text: "rice", color: Color.CustomColors.lightYellow)
-                        }
-                        .padding(.bottom,50)
-                        
-                        NavigationLink(destination: NavigationSelectionView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: "potato", complement: ingridientList.complement, likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients), navigationIndex: 2)){
-                            RoundedButton(text: "potato", color: Color.CustomColors.lightYellow)
-                        }
-                        .padding(.bottom,50)
-                        
-                        NavigationLink(destination: NavigationSelectionView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: "other", complement: ingridientList.complement, likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients), navigationIndex: 2)){
-                            RoundedButton(text: "other", color: Color.CustomColors.lightYellow)
+                        ForEach(MainDish.allCases, id: \.self) { option in
+                            NavigationLink(destination: NavigationSelectionView(navigationIndex: 2, viewModel: viewModel.update(mainDish: option))) {
+                                RoundedButton(text: option.rawValue, textColor: Color.CustomColors.orange, backgroundColor: Color.CustomColors.lightYellow)
+                            }
+                            .padding(.bottom, 50)
                         }
                     }
                 }
                 else if (navigationIndex == 2) {
                     VStack {
-                        if ingridientList.isVegan{
-                            VStack {
-                                NavigationLink(destination: CardPickerView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: ingridientList.base, complement: "vegan", likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients))){
-                                    RoundedButton(text: "vegan", color: Color.CustomColors.lightBlue)
-                                }
-                                .padding(.bottom,50)
+                        switch viewModel.isVeg {
+                        case .veg:
+                            ForEach(Addings.vegCases, id: \.self) { option in
                                 
-                                NavigationLink(destination: CardPickerView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: ingridientList.base, complement: "dairy", likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients))){
-                                    RoundedButton(text: "dairy", color: Color.CustomColors.lightBlue)
+                                NavigationLink(destination: CardPickerView(viewModel: viewModel.update(addings: .veg(option)))) {
+                                    RoundedButton(text: option.rawValue, textColor: Color.CustomColors.orange, backgroundColor: Color.CustomColors.lightBlue)
                                 }
-                                .padding(.bottom,50)
-                                
-                                NavigationLink(destination: CardPickerView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: ingridientList.base, complement: "other", likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients))){
-                                    RoundedButton(text: "other", color: Color.CustomColors.lightBlue)
-                                }
+                                .padding(.bottom, 50)
                             }
-                        }
-                        else {
-                            VStack {
-                                NavigationLink(destination: CardPickerView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: ingridientList.base, complement: "meat", likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients))){
-                                    RoundedButton(text: "meat", color: Color.CustomColors.lightBlue)
+                        case .nonVeg, .none:
+                            ForEach(Addings.nonVegCases, id: \.self) { option in
+                                NavigationLink(destination: CardPickerView(viewModel: viewModel.update(addings: .nonVeg(option)))) {
+                                    RoundedButton(text: option.rawValue, textColor: Color.CustomColors.orange, backgroundColor: Color.CustomColors.lightBlue)
                                 }
-                                .padding(.bottom,50)
-                                
-                                NavigationLink(destination: CardPickerView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: ingridientList.base, complement: "fish", likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients))){
-                                    RoundedButton(text: "fish", color: Color.CustomColors.lightBlue)
-                                }
-                                .padding(.bottom,50)
-                                
-                                NavigationLink(destination: CardPickerView(ingridientList: FlavorMatch.IngridientsList(isVegan: ingridientList.isVegan, base: ingridientList.base, complement: "other", likedIngridients: ingridientList.likedIngridients, dislikedIngridients: ingridientList.dislikedIngridients))){
-                                    RoundedButton(text: "other", color: Color.CustomColors.lightBlue)
-                                }
+                                .padding(.bottom, 50)
                             }
                         }
                     }
@@ -91,16 +71,7 @@ struct NavigationSelectionView: View {
 struct NavigationSelectionView_Previews: PreviewProvider {
 
     static var previews: some View {
-        NavigationSelectionView(
-            ingridientList: IngridientsList(
-                isVegan: false,
-                base: "",
-                complement: "",
-                likedIngridients: [],
-                dislikedIngridients: []
-            ),
-            navigationIndex: 0
-        )
+        NavigationSelectionView(navigationIndex: 1, viewModel: AppViewModel())
     }
 
 }

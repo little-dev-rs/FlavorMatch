@@ -2,15 +2,38 @@
 //  Ingridient.swift
 //  FlavorMatch
 //
-//  Created by PotatoDolphins on 26/02/24.
+//  Created by Svetlana Shardakova on 04/03/24.
 //
 
 import Foundation
 
-struct Ingridient: Identifiable {
-    let id: UUID = UUID()
-    let name: String
-    let description: String
-    let imageName: String
+enum Ingridient: String, Identifiable {
+    
+    var id: UUID {
+        return  UUID()
+    }
+
+    case tomato
+    case chili
+    case garlic
+    case onion
+    case carrot
+
+    var imageName: String {
+        switch self {
+        case .tomato:
+            return "tomato"
+        case .chili:
+            return "pepers"
+        case .garlic:
+            return "garlic"
+        case .onion:
+            return "onions"
+        case .carrot:
+            return "carrot"
+        }
+    }
+    
+    static var allCases: [Ingridient] = [.carrot, .chili, .garlic, .onion, .tomato]
 }
 

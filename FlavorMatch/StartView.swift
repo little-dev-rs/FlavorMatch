@@ -13,6 +13,8 @@ struct StartView: View {
         static let imageName: String = "hands"
         static let buttonTitle: String = "Match your flavour"
     }
+    
+    @State var viewModel: AppViewModel = AppViewModel()
 
     var body: some View {
         NavigationView {
@@ -22,25 +24,19 @@ struct StartView: View {
                         .ignoresSafeArea()
 
                     Image(Constants.imageName)
-                        .aspectRatio(contentMode: .fill)
+                        .resizable()
+                        .scaledToFit()
+                        .edgesIgnoringSafeArea(.all)
                     
-                    NavigationLink(destination: NavigationSelectionView(
-                        ingridientList: IngridientsList(
-                            isVegan: false,
-                            base: "",
-                            complement: "",
-                            likedIngridients: [],
-                            dislikedIngridients: []
-                        ),
-                        navigationIndex: 0
-                    ))
-                    {
+                    NavigationLink(destination: NavigationSelectionView(navigationIndex: 0,
+                                                                        viewModel: viewModel)) {
                         ZStack {
                             Circle()
                                 .foregroundColor(Color.clear)
 
                             Text(Constants.buttonTitle)
-                                .font(.system(size: 50, weight: .bold))
+                                .font(.system(size: 50, design: .rounded))
+                                .fontWeight(.bold)
                                 .foregroundColor(Color.CustomColors.orange)
                                 .padding(.top, -40)
                         }
