@@ -12,13 +12,12 @@ class AppViewModel: ObservableObject {
     var isVeg: IsVeg?
     var mainDish: MainDish?
     var addings: Addings?
-//    let targetIngredients: [Ingridient] = [.onion, .tomato, .chili]
-    var targetIngredients: [Ingridient]? {
+    var targetIngredients: [Ingridient]? = [] {
         didSet {
-            _ = setFinalDish()
+            finalDish = getDishOption()
         }
     }
-    
+
     var allIngridients: [Ingridient] = Ingridient.allCases
 
     var finalDish: Dishes?
@@ -65,32 +64,28 @@ enum IsVeg: Identifiable {
 }
 
 extension AppViewModel {
-    
-    func setFinalDish() -> Dishes? {
-        guard let isVeg = isVeg else {
-            return nil
-        }
-        switch isVeg {
-        case .nonVeg:
-            return getNonvegOptions()
-        case .veg:
-            return getNonvegOptions()
-        }
-    }
-    
-    //TODO: handle all cases
-    func getVegOptions() -> Dishes? {
-        return .riceNoodles
-    }
 
-    func getNonvegOptions() -> Dishes? {
+    func getDishOption() -> Dishes? {
         guard let mainDish = mainDish, let addings = addings else { return nil}
     
         switch mainDish {
         case .rice:
             switch addings {
-            case .veg(_):
-                return nil
+            case .veg(let vegOption):
+                switch vegOption {
+                case .vegan:
+                    // rice vegan
+                    let preset: [Dishes] = [.ricePapperRolls] // TODO :
+                    return matchDish(preset: preset)
+                case .diary:
+                    // rice diary
+                    let preset: [Dishes] = [.fishNChips] // TODO:
+                    return matchDish(preset: preset)
+                case .other:
+                    // rice other
+                    let preset: [Dishes] = [.falafel, .burrito, .guacamole] // TODO:
+                    return matchDish(preset: preset)
+                }
             case .nonVeg(let nonVegOption):
                 switch nonVegOption {
                     // rice fish
@@ -109,11 +104,24 @@ extension AppViewModel {
                     return matchDish(preset: preset)
                 }
             }
-            
         case .potato:
             switch addings {
             case .veg(let veg):
-                return nil
+                switch veg {
+                    
+                case .vegan:
+                    // potato vegan
+                    let preset: [Dishes] = [.patatasBravas] // TODO:
+                    return matchDish(preset: preset)
+                case .diary:
+                    // potato diary
+                    let preset: [Dishes] = [.potatoSalad] // TODO:
+                    return matchDish(preset: preset)
+                case .other:
+                    // potato other
+                    let preset: [Dishes] = [.patatasBravas] // TODO:
+                    return matchDish(preset: preset)
+                }
             case .nonVeg(let nonVeg):
                 switch nonVeg {
                     // potato fish
@@ -134,13 +142,26 @@ extension AppViewModel {
             }
         case .other:
             switch addings {
-            case .veg(_):
-                return nil
+            case .veg(let vegOption):
+                switch vegOption {
+                case .vegan:
+                    // other vegan
+                    let preset: [Dishes] = [ .ricePapperRolls]  // TODO :
+                    return matchDish(preset: preset)
+                case .diary:
+                    // other diary
+                    let preset: [Dishes] = [.riceNoodles]  // TODO :
+                    return matchDish(preset: preset)
+                case .other:
+                    // other other
+                    let preset: [Dishes] = [.falafel] // TODO :
+                    return matchDish(preset: preset)
+                }
             case .nonVeg(let nonVeg):
                 switch nonVeg {
                     // other fish
                 case .fish:
-                    return .fishNChips
+                    return .fishNChips // TODO:
                     
                     // other meat
                 case .meat:
@@ -157,13 +178,13 @@ extension AppViewModel {
     }
 
     func matchDish(preset: [Dishes]) -> Dishes? {
-        let matchingDishes = preset.filter { dish in
-            guard let ingridients = dish.ingridientsToMatch, let choosenIngridients = targetIngredients else {
-                return false
+        var finalDish = preset.randomElement()
+        preset.forEach { dish in
+            if Set(arrayLiteral: dish.ingridientsToMatch) == Set(arrayLiteral: targetIngredients) {
+                finalDish = dish
             }
-            return Set(ingridients) == Set(choosenIngridients)
         }
-        return matchingDishes.first
+        return finalDish
     }
 
 }

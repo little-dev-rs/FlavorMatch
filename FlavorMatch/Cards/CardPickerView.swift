@@ -10,8 +10,7 @@ import SwiftUI
 struct CardPickerView: View {
 
     @StateObject var viewModel: AppViewModel
-
-    @State var ingridientNumber: Int = 5
+    @State var ingridientNumber: Int = 5 //
     
     var body: some View {
         if ingridientNumber == 0 {
@@ -33,10 +32,11 @@ struct CardPickerView: View {
                 Color.CustomColors.orange
                     .ignoresSafeArea()
                 
-                ForEach(viewModel.allIngridients) { ingridient in
-                    CardLike(currentIngridient: ingridient, ingridientNumber: $ingridientNumber) {
-                        print("test1 like \(ingridient)")
-                    }
+                CardLike(currentIngridient: viewModel.allIngridients[ingridientNumber - 1]) {
+                    ingridientNumber -= 1
+                    _ = viewModel.update(addIngridient: viewModel.allIngridients[ingridientNumber])
+                } onDislikeIngridient: {
+                    ingridientNumber -= 1
                 }
             }
         }

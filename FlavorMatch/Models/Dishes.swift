@@ -93,109 +93,109 @@ enum Dishes { //rename to Dish
         }
     }
     
-    var image: UIImage {
+    var image: String {
         switch self {
         case .byriani:
-            return UIImage(named: "") ?? UIImage()
+            return "biryani"
         case .paella:
-            return UIImage(named: "") ?? UIImage()
+            return "paellaMeat"
         case .guacamole:
-            return UIImage(named: "") ?? UIImage()
+            return "guacamole"
         case .falafel:
-            return UIImage(named: "") ?? UIImage()
+            return "falafel"
         case .burrito:
-            return UIImage(named: "") ?? UIImage()
+            return "vegBurrito"
         case .arroz:
-            return UIImage(named: "") ?? UIImage()
+            return "arrozConPollo"
         case .ricePapperRolls:
-            return UIImage(named: "") ?? UIImage()
+            return "veganRiceRolls"
         case .riceNoodles:
-            return UIImage(named: "") ?? UIImage()
+            return "riceNoodleSalad"
         case .bacalhauBras:
-            return UIImage(named: "") ?? UIImage()
+            return "bacalhauBras"
         case .risotto:
-            return UIImage(named: "") ?? UIImage()
+            return "mashroomRisotto"
         case .moussaka:
-            return UIImage(named: "") ?? UIImage()
+            return "mussaka"
         case .shepardsPie:
-            return UIImage(named: "") ?? UIImage()
+            return "shepardsPie"
         case .burek:
-            return UIImage(named: "") ?? UIImage()
+            return "burek"
         case .pasteisDeBacalhau:
-            return UIImage(named: "") ?? UIImage()
+            return "PasteisDeBacalhau"
         case .fishNChips:
-            return UIImage(named: "") ?? UIImage()
+            return "fishChips"
         case .patatasBravas:
-            return UIImage(named: "") ?? UIImage()
+            return "patatasBravas"
         case .potatoSalad:
-            return UIImage(named: "") ?? UIImage()
+            return "potatoSalad"
         case .gnocchi:
-            return UIImage(named: "") ?? UIImage()
+            return "gnocchi"
         case .empandas:
-            return UIImage(named: "") ?? UIImage()
+            return "empanadas"
         case .gyoza:
-            return UIImage(named: "") ?? UIImage()
+            return "gyoza"
         case .croqueMonsier:
-            return UIImage(named: "") ?? UIImage()
+            return "croqueMonsier"
         case .capreseSalad:
-            return UIImage(named: "") ?? UIImage()
+            return "caprese"
         case .greekSalad:
-            return UIImage(named: "") ?? UIImage()
+            return "greekSalad"
         case .padThai:
-            return UIImage(named: "") ?? UIImage()
+            return "padThai"
         }
     }
     
     var name: String {
         switch self {
         case .byriani:
-            return "byriani"
+            return "Byriani"
         case .paella:
-            return ""
+            return "Paella"
         case .guacamole:
-            return ""
+            return "Guacamole"
         case .falafel:
-            return ""
+            return "Falafel"
         case .burrito:
-            return ""
+            return "Veg Burrito"
         case .arroz:
-            return ""
+            return "Arroz con pollo"
         case .ricePapperRolls:
-            return ""
+            return "Rice paper rolls"
         case .riceNoodles:
-            return ""
+            return "Vegan Rice Noodle Salad"
         case .bacalhauBras:
-            return ""
+            return "Bacalhau à Brás"
         case .risotto:
-            return ""
+            return "Mashroom Risotto"
         case .moussaka:
-            return ""
+            return "Moussaka"
         case .shepardsPie:
-            return ""
+            return "Shepards Pie"
         case .burek:
-            return ""
+            return "Burek"
         case .pasteisDeBacalhau:
-            return ""
+            return "Pastéis de bacalhau"
         case .fishNChips:
-            return ""
+            return "Fish and chips"
         case .patatasBravas:
-            return ""
+            return "Patatas Bravas"
         case .potatoSalad:
-            return ""
+            return "Potato Salad"
         case .gnocchi:
-            return ""
+            return "Gnocchi"
         case .empandas:
-            return ""
+            return "Empandas"
         case .gyoza:
-            return ""
+            return "Gyoza"
         case .croqueMonsier:
-            return ""
+            return "Croque Monsier"
         case .capreseSalad:
-            return ""
+            return "Caprese Salad"
         case .greekSalad:
-            return ""
+            return "Greek Salad"
         case .padThai:
-            return ""
+            return "Pad thai"
         }
     }
 }

@@ -26,11 +26,11 @@ enum Ingridient: String, Identifiable {
         case .chili:
             return "pepers"
         case .garlic:
-            return "almonds" // garlic
+            return "garlic"
         case .onion:
             return "onions"
         case .carrot:
-            return "gyoza" // carrot
+            return "carrot"
         }
     }
     

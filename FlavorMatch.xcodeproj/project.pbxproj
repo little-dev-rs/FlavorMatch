@@ -23,7 +23,6 @@
 		772A20C42B84B7C900CB15F6 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772A20C32B84B7C900CB15F6 /* StartView.swift */; };
 		772A20C62B84B7CC00CB15F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772A20C52B84B7CC00CB15F6 /* Assets.xcassets */; };
 		772A20CA2B84B7CC00CB15F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772A20C92B84B7CC00CB15F6 /* Preview Assets.xcassets */; };
-		7771ED0D2B8CE94D00769ED7 /* IngridientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771ED0C2B8CE94D00769ED7 /* IngridientModel.swift */; };
 		7771ED0F2B8CE97C00769ED7 /* View+rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771ED0E2B8CE97C00769ED7 /* View+rect.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +45,6 @@
 		772A20C52B84B7CC00CB15F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		772A20C72B84B7CC00CB15F6 /* FlavorMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlavorMatch.entitlements; sourceTree = "<group>"; };
 		772A20C92B84B7CC00CB15F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7771ED0C2B8CE94D00769ED7 /* IngridientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientModel.swift; sourceTree = "<group>"; };
 		7771ED0E2B8CE97C00769ED7 /* View+rect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+rect.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,7 +116,6 @@
 			children = (
 				7722B5292B955B9000EEBF5C /* MainDish.swift */,
 				7722B52B2B955BC400EEBF5C /* Ingridient.swift */,
-				7771ED0C2B8CE94D00769ED7 /* IngridientModel.swift */,
 				7722B51F2B94D77600EEBF5C /* DishModel.swift */,
 				7722B5212B94FAE800EEBF5C /* Dishes.swift */,
 				7722B51D2B94D74500EEBF5C /* IngridientsList.swift */,
@@ -218,7 +215,6 @@
 				7722B5282B95402F00EEBF5C /* CardLike.swift in Sources */,
 				7722B52A2B955B9000EEBF5C /* MainDish.swift in Sources */,
 				57E090A32B927D7D0002EBA2 /* DishView.swift in Sources */,
-				7771ED0D2B8CE94D00769ED7 /* IngridientModel.swift in Sources */,
 				7722B5202B94D77600EEBF5C /* DishModel.swift in Sources */,
 				772A20C22B84B7C900CB15F6 /* FlavorMatchApp.swift in Sources */,
 			);

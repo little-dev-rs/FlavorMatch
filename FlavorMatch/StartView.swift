@@ -24,7 +24,9 @@ struct StartView: View {
                         .ignoresSafeArea()
 
                     Image(Constants.imageName)
-                        .aspectRatio(contentMode: .fill)
+                        .resizable()
+                        .scaledToFit()
+                        .edgesIgnoringSafeArea(.all)
                     
                     NavigationLink(destination: NavigationSelectionView(navigationIndex: 0,
                                                                         viewModel: viewModel)) {
@@ -33,7 +35,8 @@ struct StartView: View {
                                 .foregroundColor(Color.clear)
 
                             Text(Constants.buttonTitle)
-                                .font(.system(size: 50, weight: .bold))
+                                .font(.system(size: 50, design: .rounded))
+                                .fontWeight(.bold)
                                 .foregroundColor(Color.CustomColors.orange)
                                 .padding(.top, -40)
                         }
