@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum Dishes { //rename to Dish
+enum Dish {
     case byriani
     case paella
     case guacamole
@@ -33,7 +33,7 @@ enum Dishes { //rename to Dish
     case greekSalad
     case padThai
     
-    static var allCases: [Dishes] {
+    static var allCases: [Dish] {
         return [
             .byriani, .paella, .guacamole, .falafel, .burrito, .arroz , .ricePapperRolls, .riceNoodles, .bacalhauBras, .risotto, .moussaka, .shepardsPie, .burek, .pasteisDeBacalhau, .fishNChips , .patatasBravas, .potatoSalad , .gnocchi, .empandas, .gyoza, .croqueMonsier, .capreseSalad, .greekSalad, .padThai
         ]
@@ -196,6 +196,59 @@ enum Dishes { //rename to Dish
             return "Greek Salad"
         case .padThai:
             return "Pad thai"
+        }
+    }
+    
+    var country: String {
+        switch self {
+        case .byriani:
+            return "Indian"
+        case .paella:
+            return "Spainish"
+        case .guacamole:
+            return "Mexican"
+        case .falafel:
+            return "Middle Eastern"
+        case .burrito:
+            return "Mexican"
+        case .arroz:
+            return "Spainish"
+        case .ricePapperRolls:
+            return "Vietnamese"
+        case .riceNoodles:
+            return "Vietnamese"
+        case .bacalhauBras:
+            return "Portugese"
+        case .risotto:
+            return "Italian"
+        case .moussaka:
+            return "Greek"
+        case .shepardsPie:
+            return "English"
+        case .burek:
+            return "Balcanian"
+        case .pasteisDeBacalhau:
+            return "Portugese"
+        case .fishNChips:
+            return "English"
+        case .patatasBravas:
+            return "Spainish"
+        case .potatoSalad:
+            return "German"
+        case .gnocchi:
+            return "Italian"
+        case .empandas:
+            return "Latin American"
+        case .gyoza:
+            return "Japanese"
+        case .croqueMonsier:
+            return "French"
+        case .capreseSalad:
+            return "Italian"
+        case .greekSalad:
+            return "Greek"
+        case .padThai:
+            return "Thai"
         }
     }
 }

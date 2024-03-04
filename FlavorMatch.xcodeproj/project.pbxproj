@@ -11,9 +11,8 @@
 		57E090A12B926E600002EBA2 /* CardPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E090A02B926E600002EBA2 /* CardPickerView.swift */; };
 		57E090A32B927D7D0002EBA2 /* DishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E090A22B927D7D0002EBA2 /* DishView.swift */; };
 		7722B51C2B94D6EE00EEBF5C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B51B2B94D6EE00EEBF5C /* RoundedButton.swift */; };
-		7722B51E2B94D74500EEBF5C /* IngridientsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B51D2B94D74500EEBF5C /* IngridientsList.swift */; };
 		7722B5202B94D77600EEBF5C /* DishModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B51F2B94D77600EEBF5C /* DishModel.swift */; };
-		7722B5222B94FAE800EEBF5C /* Dishes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B5212B94FAE800EEBF5C /* Dishes.swift */; };
+		7722B5222B94FAE800EEBF5C /* Dish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B5212B94FAE800EEBF5C /* Dish.swift */; };
 		7722B5242B95047F00EEBF5C /* Addings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B5232B95047F00EEBF5C /* Addings.swift */; };
 		7722B5262B953EAB00EEBF5C /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B5252B953EAB00EEBF5C /* AppViewModel.swift */; };
 		7722B5282B95402F00EEBF5C /* CardLike.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7722B5272B95402E00EEBF5C /* CardLike.swift */; };
@@ -31,9 +30,8 @@
 		57E090A02B926E600002EBA2 /* CardPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPickerView.swift; sourceTree = "<group>"; };
 		57E090A22B927D7D0002EBA2 /* DishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishView.swift; sourceTree = "<group>"; };
 		7722B51B2B94D6EE00EEBF5C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		7722B51D2B94D74500EEBF5C /* IngridientsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngridientsList.swift; sourceTree = "<group>"; };
 		7722B51F2B94D77600EEBF5C /* DishModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishModel.swift; sourceTree = "<group>"; };
-		7722B5212B94FAE800EEBF5C /* Dishes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dishes.swift; sourceTree = "<group>"; };
+		7722B5212B94FAE800EEBF5C /* Dish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dish.swift; sourceTree = "<group>"; };
 		7722B5232B95047F00EEBF5C /* Addings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Addings.swift; sourceTree = "<group>"; };
 		7722B5252B953EAB00EEBF5C /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		7722B5272B95402E00EEBF5C /* CardLike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLike.swift; sourceTree = "<group>"; };
@@ -79,12 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				772A20C12B84B7C900CB15F6 /* FlavorMatchApp.swift */,
-				772A20C32B84B7C900CB15F6 /* StartView.swift */,
 				57E0909E2B921A080002EBA2 /* NavigationView.swift */,
 				7722B5252B953EAB00EEBF5C /* AppViewModel.swift */,
-				7722B5232B95047F00EEBF5C /* Addings.swift */,
-				7722B51B2B94D6EE00EEBF5C /* RoundedButton.swift */,
-				57E090A22B927D7D0002EBA2 /* DishView.swift */,
+				77B7DCD82B960CD900762AF3 /* Views */,
 				77A85C862B8D3CFB006C0F4E /* Cards */,
 				7771ED112B8D1CE200769ED7 /* Models */,
 				7771ED102B8D1CD100769ED7 /* Extensions */,
@@ -114,11 +109,11 @@
 		7771ED112B8D1CE200769ED7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7722B5232B95047F00EEBF5C /* Addings.swift */,
 				7722B5292B955B9000EEBF5C /* MainDish.swift */,
 				7722B52B2B955BC400EEBF5C /* Ingridient.swift */,
 				7722B51F2B94D77600EEBF5C /* DishModel.swift */,
-				7722B5212B94FAE800EEBF5C /* Dishes.swift */,
-				7722B51D2B94D74500EEBF5C /* IngridientsList.swift */,
+				7722B5212B94FAE800EEBF5C /* Dish.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +125,16 @@
 				57E090A02B926E600002EBA2 /* CardPickerView.swift */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		77B7DCD82B960CD900762AF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				772A20C32B84B7C900CB15F6 /* StartView.swift */,
+				7722B51B2B94D6EE00EEBF5C /* RoundedButton.swift */,
+				57E090A22B927D7D0002EBA2 /* DishView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +210,8 @@
 				772A20C42B84B7C900CB15F6 /* StartView.swift in Sources */,
 				57E0909F2B921A080002EBA2 /* NavigationView.swift in Sources */,
 				7722B52C2B955BC400EEBF5C /* Ingridient.swift in Sources */,
-				7722B5222B94FAE800EEBF5C /* Dishes.swift in Sources */,
+				7722B5222B94FAE800EEBF5C /* Dish.swift in Sources */,
 				7771ED0F2B8CE97C00769ED7 /* View+rect.swift in Sources */,
-				7722B51E2B94D74500EEBF5C /* IngridientsList.swift in Sources */,
 				57E090A12B926E600002EBA2 /* CardPickerView.swift in Sources */,
 				7722B51C2B94D6EE00EEBF5C /* RoundedButton.swift in Sources */,
 				7722B5242B95047F00EEBF5C /* Addings.swift in Sources */,
@@ -344,7 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlavorMatch/FlavorMatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"FlavorMatch/Preview Content\"";
 				DEVELOPMENT_TEAM = M9SN9YUYC9;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -382,7 +386,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = FlavorMatch/FlavorMatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_ASSET_PATHS = "\"FlavorMatch/Preview Content\"";
 				DEVELOPMENT_TEAM = M9SN9YUYC9;
 				ENABLE_HARDENED_RUNTIME = YES;
