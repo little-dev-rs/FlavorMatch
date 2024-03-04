@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct DishView: View {
-    var dishes: [String]
+    var dishes: Dishes?
     var body: some View {
-        VStack{
-            ForEach(dishes, id: \.self) { dish in
-                Text(dish)
-            }
+        
+        VStack {
+            Text(dishes?.name ?? "dishes?.name ")
+//            ForEach(dishes, id: \.self) { dish in
+//                Text(dish)
+//            }
         }
     }
 }
 
-#Preview {
-    DishView(dishes: ["No dish yet", "No second of course"])
-}
+//#Preview {
+//    DishView(dishes: ["No dish yet", "No second of course"])
+//}

@@ -5,52 +5,37 @@
 //  Created by Svetlana Shardakova on 03/03/24.
 //
 
-import UIKit
+import Foundation
 
-enum Addings {
+enum Addings: Identifiable {
 
-    enum Veg {
+    enum Veg: String, Identifiable {
         case vegan
         case diary
         case other
+        
+        var id: UUID {
+            UUID()
+        }
     }
 
-    enum NonVeg {
+    enum NonVeg: String, Identifiable {
         case meat
         case fish
         case other
+        
+        var id: UUID {
+            UUID()
+        }
     }
     
     case veg(Veg)
     case nonVeg(NonVeg)
 
-}
-
-enum MainDish {
-    case rice
-    case potato
-    case other
-}
-
-enum Ingridient {
-    case tomato
-    case chili
-    case garlic
-    case onion
-    case carrot
-    // a здесь смапать с ингридиентами
-    var image: UIImage {
-        switch self {
-        case .tomato:
-            return UIImage(named: "") ?? UIImage()
-        case .chili:
-            return UIImage(named: "") ?? UIImage()
-        case .garlic:
-            return UIImage(named: "") ?? UIImage()
-        case .onion:
-            return UIImage(named: "") ?? UIImage()
-        case .carrot:
-            return UIImage(named: "") ?? UIImage()
-        }
+    var id: UUID {
+        UUID()
     }
+    
+    static var nonVegCases: [NonVeg] = [.meat, .fish, .other]
+    static var vegCases: [Veg] = [.vegan, .diary, .other]
 }

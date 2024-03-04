@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct IngridientModel: Identifiable {
-    let id: UUID = UUID()
-    let name: String
-    let description: String
-    let imageName: String
-}
-
+//struct IngridientModel: Identifiable {
+//    let id: UUID = UUID()
+//    let name: String
+//    let description: String
+//    let imageName: String
+//}
+//
