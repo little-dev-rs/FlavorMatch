@@ -23,7 +23,7 @@ struct NavigationSelectionView: View {
                     VStack {
                         ForEach(IsVeg.allCases, id: \.self) { option in
                             NavigationLink(destination: NavigationSelectionView(navigationIndex: 1, viewModel: viewModel)) {
-                                RoundedButton(text: option.name, textColor: Color.CustomColors.orange, backgroundColor: Color.CustomColors.green)
+                                RoundedButton(text: option.name, textColor: Color.CustomColors.lightOrange, backgroundColor: Color.CustomColors.green)
                             }
                             .padding(.bottom, 50)
                             .simultaneousGesture(TapGesture().onEnded {

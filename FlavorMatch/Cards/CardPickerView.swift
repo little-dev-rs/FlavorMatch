@@ -17,7 +17,7 @@ struct CardPickerView: View {
             ZStack{
                 Color.CustomColors.lightOrange
                     .ignoresSafeArea()
-                NavigationLink(destination: DishView(dishes: viewModel.finalDish)) {
+                NavigationLink(destination: DishView(viewModel: viewModel)) {
                     VStack{
                         Image("burningpot")
                         Text("Matched !")
