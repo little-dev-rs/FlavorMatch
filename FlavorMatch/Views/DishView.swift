@@ -44,7 +44,7 @@ struct DishView: View {
                                     .foregroundStyle(Color.CustomColors.orange)
                                     .frame(height: 5)
                                 HStack {
-                                    Text(viewModel.finalDish?.country ?? Constants.defaultDish.country + " " + Constants.foodText)
+                                    Text("\(viewModel.finalDish?.country ?? "") \(Constants.foodText)")
                                         .font(.system(size: 30, design: .rounded))
                                         .multilineTextAlignment(.leading)
                                         .fontWeight(.bold)
@@ -58,10 +58,10 @@ struct DishView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                             
-                            Text(Constants.actionText)
-                                .font(.system(size: 20, design: .rounded))
-                                .multilineTextAlignment(.leading)
-                                .foregroundStyle(Color.CustomColors.gray)
+//                            Text(Constants.actionText)
+//                                .font(.system(size: 20, design: .rounded))
+//                                .multilineTextAlignment(.leading)
+//                                .foregroundStyle(Color.CustomColors.gray)
                         }
                         .padding()
                     }
